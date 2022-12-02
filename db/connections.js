@@ -1,7 +1,12 @@
 const mongoose = require('mongoose');
 
+const mongoURI =
+  process.env.NODE_ENV === 'production'
+    ? process.env.MONGODB_URI
+    : 'mongodb://localhost/calander';
+
 mongoose
-    .connect('mongodb://localhost/calander', {
+    .connect(mongoURI, {
     useNewUrlParser: true,
     // useCreateIndex: true,
     // useUnifiedTopology: true,
