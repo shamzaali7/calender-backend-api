@@ -12,4 +12,4 @@ const dateSchema = new Schema({
 })
 
 const Date = mongoose.mondel("Date", dateSchema);
-monule.exports = Date;
+module.exports = Date;
