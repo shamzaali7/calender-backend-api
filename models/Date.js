@@ -11,5 +11,5 @@ const dateSchema = new Schema({
     tasks: [taskSchema]
 })
 
-const Date = mongoose.mondel("Date", dateSchema);
+const Date = mongoose.model("Date", dateSchema);
 module.exports = Date;
