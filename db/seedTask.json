@@ -1,0 +1,12 @@
+[
+    {
+        "title" : "Do homework",
+        "isCompleted" : false,
+        "dayIndex": 6
+    },
+    {
+        "title" : "Clean Room",
+        "isCompleted" : false,
+        "dayIndex": 2
+    }
+]

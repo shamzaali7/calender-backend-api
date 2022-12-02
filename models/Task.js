@@ -3,7 +3,8 @@ const Schema = mongoose.Schema;
 
 const taskSchema = new Schema({
     title: String,
-    isCompleted: {type: Boolean, default: false}
+    isCompleted: {type: Boolean, default: false},
+    dayIndex: Number
 })
 const Task = mongoose.model("Task", taskSchema);
-mondule.exports = Task;
+module.exports = Task;

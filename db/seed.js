@@ -1,8 +1,33 @@
-const Date = require("../models/Date")
-const seedData = require("./seed.json")
+const mongoose = require("./connections")
+const Date = require("../models/Date");
+const Task = require("../models/Task");
+const seedDay = require("./seedDay.json");
+const seedTask = require("./seedTask.json");
 
-Date.deleteMany({})
-   .then(() => Date.insertMany(seedData))
-   .then(console.log(Date))
-   .catch(console.error)
-   .finally(process.exit)
+const dataArr = seedDay.map((dates) => (
+    {day: dates.day}
+))
+
+
+    dataArr.forEach(days => {
+        let updateTask = Task.findOne({dayIndex : days.day})
+        .then(() => {
+            return Date.findOneAndUpdate({day: days.day}, {tasks : updateTask.title}, {new: true})
+        })
+        .then(console.log)
+        .catch(console.error)
+        .finally(() => {process.exit()})
+    })
+    
+    
+
+    // monarchs.forEach(monarch => {
+    //     Kingdom.findOne({title: monarch.kingdom})
+    //     .then(kingdom => {
+    //         let id = kingdom._id
+    //         return Monarch.findOneAndUpdate({name: monarch.name}, {kingdom: id}, {new: true})
+    //     })
+    //     .then(console.log)
+    //     .catch(console.error)
+    //     .finally(() => {process.exit()})
+    // })
