@@ -1,12 +1,158 @@
 [
     {
-        "title" : "Do homework",
-        "isCompleted" : false,
+        "title": "Your Tasks For Day 1",
+        "isCompleted": false,
+        "dayIndex": 1
+    },
+    {
+        "title": "Your Tasks For Day 2",
+        "isCompleted": false,
+        "dayIndex": 2
+    },
+    {
+        "title": "Your Tasks For Day 3",
+        "isCompleted": false,
+        "dayIndex": 3
+    },
+    {
+        "title": "Your Tasks For Day 4",
+        "isCompleted": false,
+        "dayIndex": 4
+    },
+    {
+        "title": "Your Tasks For Day 5",
+        "isCompleted": false,
+        "dayIndex": 5
+    },
+    {
+        "title": "Your Tasks For Day 6",
+        "isCompleted": false,
         "dayIndex": 6
     },
     {
-        "title" : "Clean Room",
-        "isCompleted" : false,
-        "dayIndex": 2
+        "title": "Your Tasks For Day 7",
+        "isCompleted": false,
+        "dayIndex": 7
+    },
+    {
+        "title": "Your Tasks For Day 8",
+        "isCompleted": false,
+        "dayIndex": 8
+    },
+    {
+        "title": "Your Tasks For Day 9",
+        "isCompleted": false,
+        "dayIndex": 9
+    },
+    {
+        "title": "Your Tasks For Day 10",
+        "isCompleted": false,
+        "dayIndex": 10
+    },
+    {
+        "title": "Your Tasks For Day 11",
+        "isCompleted": false,
+        "dayIndex": 11
+    },
+    {
+        "title": "Your Tasks For Day 12",
+        "isCompleted": false,
+        "dayIndex": 12
+    },
+    {
+        "title": "Your Tasks For Day 13",
+        "isCompleted": false,
+        "dayIndex": 13
+    },
+    {
+        "title": "Your Tasks For Day 14",
+        "isCompleted": false,
+        "dayIndex": 14
+    },
+    {
+        "title": "Your Tasks For Day 15",
+        "isCompleted": false,
+        "dayIndex": 15
+    },
+    {
+        "title": "Your Tasks For Day 16",
+        "isCompleted": false,
+        "dayIndex": 16
+    },
+    {
+        "title": "Your Tasks For Day 17",
+        "isCompleted": false,
+        "dayIndex": 17
+    },
+    {
+        "title": "Your Tasks For Day 18",
+        "isCompleted": false,
+        "dayIndex": 18
+    },
+    {
+        "title": "Your Tasks For Day 19",
+        "isCompleted": false,
+        "dayIndex": 19
+    },
+    {
+        "title": "Your Tasks For Day 20",
+        "isCompleted": false,
+        "dayIndex": 20
+    },
+    {
+        "title": "Your Tasks For Day 21",
+        "isCompleted": false,
+        "dayIndex": 21
+    },
+    {
+        "title": "Your Tasks For Day 22",
+        "isCompleted": false,
+        "dayIndex": 22
+    },
+    {
+        "title": "Your Tasks For Day 23",
+        "isCompleted": false,
+        "dayIndex": 23
+    },
+    {
+        "title": "Your Tasks For Day 24",
+        "isCompleted": false,
+        "dayIndex": 24
+    },
+    {
+        "title": "Your Tasks For Day 25",
+        "isCompleted": false,
+        "dayIndex": 25
+    },
+    {
+        "title": "Your Tasks For Day 26",
+        "isCompleted": false,
+        "dayIndex": 26
+    },
+    {
+        "title": "Your Tasks For Day 27",
+        "isCompleted": false,
+        "dayIndex": 27
+    },
+    {
+        "title": "Your Tasks For Day 28",
+        "isCompleted": false,
+        "dayIndex": 28
+    },
+    {
+        "title": "Your Tasks For Day 29",
+        "isCompleted": false,
+        "dayIndex": 29
+    },
+    {
+        "title": "Your Tasks For Day 30",
+        "isCompleted": false,
+        "dayIndex": 30
+    },
+    {
+        "title": "Your Tasks For Day 31",
+        "isCompleted": false,
+        "dayIndex": 31
     }
+   
 ]
