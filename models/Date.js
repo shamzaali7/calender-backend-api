@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const dateSchema = new Schema({
     day: Number,
-    tasks: {type: mongoose.Schema.Types.ObjectId, ref:"Task"}
+    tasks: {type: String, ref:"Task"}
 })
 
 const Date = mongoose.model("Date", dateSchema);

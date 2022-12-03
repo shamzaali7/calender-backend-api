@@ -21,11 +21,13 @@ app.use(express.urlencoded({ extended: true }));
 //=============================================================================
 // Redirect
 app.get('/', (req, res) => {
-	res.redirect('/api/calander');
+	res.redirect('/api/date');
 });
 /* START CONTROLLERS HERE */
-const calanderController = require('./controller/calanderController');
-app.use('/api/calander/', calanderController);
+const dateController = require('./controllers/dateController');
+const taskController = require('./controllers/taskController');
+app.use('/api/date/', dateController);
+app.use('/api/task/', taskController);
 /* END CONTROLLERS HERE */
 
 //=============================================================================

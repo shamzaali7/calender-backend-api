@@ -36,6 +36,10 @@ dateData.forEach((data => {
             {day: dayNum},
             {Task: tsk},
             { new: true }
-        )
+        ).then(console.log)
+        .catch(console.error)
+        .finally(() => {
+            process.exit();
+        });
     })
 }))
