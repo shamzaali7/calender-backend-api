@@ -20,58 +20,23 @@ Date.deleteMany({}).then(() => {
       Date.create({
          day: date.day
          
-      })
-   })
-})
-   
-Task.deleteMany({}).then(() => {
-   taskData.forEach(task =>{
-      Task.create({
-         title: task.title,
-         isCompleted: task.isCompleted,
-         dayIndex: task.dayIndex
       }).then(res => console.log(res))
+      .then((err) => console.log(err))
    })
 })
 
 
-// Monarch.deleteMany({}).then(() => {
-//    monarchData.forEach(monarch => {
-//       Monarch.create({
-//          name: monarch.name,
-//          house: monarch.house,
-//          start: monarch.start,
-//          end: monarch.end,
-//          endReason: monarch.endReason
-//          // kingdom placeholder
-//       }).then(res => console.log(res));
-//    });
-// });
+Task.deleteMany({}).then(() => {
+   for(let i=0; i<seedTask.length; i++){
+      Task.create({
+         title: seedTask[i].title,
+         isCompleted: seedTask[i].isCompleted,
+         dayIndex: seedTask[i].dayIndex
+      }, async function(err, res) {
+         Date.findOne({day: res.dayIndex}, async function (err, ress) {
+            res.day = ress._id
+            await res.save()
+         })
+      })
+}})
 
-// Kingdom.deleteMany({}).then(() => {
-//    kingdomData.forEach(kingdom => {
-//       Kingdom.create({
-//          title: kingdom.title,
-//          extract: kingdom.extract
-//       }).then(res => console.log(res));
-//    });
-// });
-
-// const monarchRaw = require('../data/monarchRaw.json');
-// const kingdomRaw = require('../data/kingdomRaw.json');
-// const Monarch = require('../../models/Monarch');
-// const Kingdom = require('../../models/Kingdom');
-
-// const monarchData = monarchRaw.map(data => ({
-//    name: data.name,
-//    house: data.house,
-//    start: data.start,
-//    end: data.end,
-//    endReason: data.endReason
-//    // exclude kingdom at this point
-// }));
-
-// const kingdomData = kingdomRaw.map(data => ({
-//    title: data.title,
-//    extract: data.extract
-// }));

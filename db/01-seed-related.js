@@ -28,18 +28,16 @@ const dateData = seedDay.map((data) => ({
     day: data.day
 }))
 
-dateData.forEach((data => {
-    Task.findOne({dayIndex: data.day}).then(task =>{
-        let tsk = task.title
-        let dayNum = data.day 
-        Date.findOneAndUpdate(
-            {day: dayNum},
-            {Task: tsk},
-            { new: true }
+Date.deleteMany({})
+.then(() => {dateData.forEach((data => {
+    const newTask = Task.find({dayIndex: data.day})
+        Date.create(
+            {day: data.day},
+            {task: newTask._id},
         ).then(console.log)
         .catch(console.error)
         .finally(() => {
             process.exit();
         });
-    })
-}))
+    }))
+})
