@@ -6,7 +6,7 @@ const taskSchema = new Schema({
     isCompleted: {type: Boolean, default: false},
     dayIndex: Number,
     day: {
-        type: mongoose.SchemaTypes.ObjectId, 
+        type: mongoose.Types.ObjectId, 
         ref: "Date"
       }
 })

@@ -25,12 +25,12 @@ router.get("/:id", async (req, res, next) => {
 
 router.post("/", async (req, res, next) => {
     try{
+        const day = await Date.findOne({day: parseInt(req.body.dayIndex)})           
         const createTask = await Task.create({
             title: req.body.title, 
             isCompleted: (req.body.isCompleted === "true"), 
             dayIndex: parseInt(req.body.dayIndex),
-            day: (() => {const id = Date.findOne({day: parseInt(req.body.dayIndex)}) 
-            return(id._id)})
+            day: day._id
         });
         res.status(204).json(createTask);
     }catch(err){
