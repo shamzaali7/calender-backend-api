@@ -28,7 +28,9 @@ router.post("/", async (req, res, next) => {
         const createTask = await Task.create({
             title: req.body.title, 
             isCompleted: (req.body.isCompleted === "true"), 
-            dayIndex: parseInt(req.body.dayIndex)
+            dayIndex: parseInt(req.body.dayIndex),
+            day: (() => {const id = Date.findOne({day: parseInt(req.body.dayIndex)}) 
+            return(id._id)})
         });
         res.status(204).json(createTask);
     }catch(err){

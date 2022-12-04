@@ -8,7 +8,6 @@ const dateData = seedDay.map((data) => ({
    day: data.day
 }))
 
-
 const taskData = seedTask.map(data => ({
    title: data.title,
    isCompleted: data.isCompleted,
@@ -24,7 +23,6 @@ Date.deleteMany({}).then(() => {
       .then((err) => console.log(err))
    })
 })
-
 
 Task.deleteMany({}).then(() => {
    for(let i=0; i<seedTask.length; i++){
