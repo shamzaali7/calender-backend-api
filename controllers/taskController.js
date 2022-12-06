@@ -42,7 +42,7 @@ router.delete("/:title", async (req, res, next) => {
     try{
         const deleteTask = await Task.findOneAndDelete({title: req.params.title.replace("%20", " ")})
         if(deleteTask){
-            res.sendStatus(204).console.log(`${deleteTask} = deleted task`)
+            res.sendStatus(204)
         }else{
             res.sendStatus(404)
         }
@@ -55,7 +55,7 @@ router.delete("/delete/:id", async (req, res, next) => {
     try{
         const deleteTask = await Task.findOneAndDelete({_id: req.params.id})
         if(deleteTask){
-            res.sendStatus(204).console.log(`${deleteTask} = deleted task`)
+            res.sendStatus(204)
         }else{
             res.sendStatus(404)
         }
@@ -64,5 +64,16 @@ router.delete("/delete/:id", async (req, res, next) => {
     }
 })
 
+router.put("/", async (req,  res, next) => {
+    try{
+        let booleanCompleted = (req.body.isCompleted === "true")
+        const updatedComplete = await Task.findOneAndUpdate({title: req.body.title}, {isCompleted: booleanCompleted}, {new: true})
+        if(updatedComplete){
+            res.sendStatus(203)
+        }
+    }catch(err){
+        next(err)
+    }
+})
 
 module.exports = router;
