@@ -24,30 +24,30 @@ Date.deleteMany({}).then(() => {
    })
 })
 
-// Task.deleteMany({}).then(() => {
-//    for(let i=0; i<seedTask.length; i++){
-//       Task.create({
-//          title: seedTask[i].title,
-//          isCompleted: seedTask[i].isCompleted,
-//          dayIndex: seedTask[i].dayIndex
-//       }, 
-//       async function(err, res) {
-//          Date.findOne({day: res.dayIndex}, async function (err, ress) {
-//             res.day = ress._id
-//             await res.save()
-//          })
-//       })
-// }})
-
-seedTask.forEach((task => {
-   Date.find({day : task.dayIndex})
-   .then((dateObject) => {
+Task.deleteMany({}).then(() => {
+   for(let i=0; i<seedTask.length; i++){
       Task.create({
-         ...task,
-         day: dateObject._id
+         title: seedTask[i].title,
+         isCompleted: seedTask[i].isCompleted,
+         dayIndex: seedTask[i].dayIndex
+      }, 
+      async function(err, res) {
+         Date.findOne({day: res.dayIndex}, async function (err, ress) {
+            res.day = ress._id
+            await res.save()
+         })
       })
-   })
-}))
+}})
+
+// seedTask.forEach((task => {
+//    Date.find({day : task.dayIndex})
+//    .then((dateObject) => {
+//       Task.create({
+//          ...task,
+//          day: dateObject._id
+//       })
+//    })
+// }))
 
 // Task.deleteMany({})
 //    .then(async () => {seedTask.map(task => {
