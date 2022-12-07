@@ -25,7 +25,7 @@ app.use(express.urlencoded({ extended: true }));
 //=============================================================================
 // Redirect
 app.get('/', (req, res) => {
-	res.redirect('/api/date');
+	res.redirect('/api/task');
 });
 /* START CONTROLLERS HERE */
 const dateController = require('./controllers/dateController');
