@@ -3,8 +3,8 @@ require('dotenv').config();
 
 const mongoURI = process.env.DATABASE_URL;
 
-mongoose.connect(mongoURI, {useNewUrlParser: true})
-
+mongoose
+  .connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then((instance) =>
     console.log(`Connected to db: ${instance.connections[0].name}`)
   )
