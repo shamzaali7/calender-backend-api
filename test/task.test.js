@@ -33,6 +33,7 @@ describe("GET /:id", () => {
         })
     })
 })
+
 describe('/:id', () => {
     it ("should update 'id' of gif", done => {
         api
@@ -42,3 +43,29 @@ describe('/:id', () => {
             done()
     })
 })
+
+describe("POST /", () => {
+    const newTask = {
+      title: "Do Laundry",
+      isCompleted: false
+    };
+    before(done => {
+      api
+        .post('/api/task')
+        .set('Accept', 'application/json')
+        .send(newTask)
+        .end(done);
+    });
+
+    it('should add a task object to the task collection and return it', done => {
+        api
+          .get('/api/task')
+          .set('Accept', 'application/json')
+          .end((error, response) => {
+            expect(response.body.find(task => task.title ===  newTask.title)).to.be.an(
+              'object'
+            );
+            done();
+          });
+      })
+  })
