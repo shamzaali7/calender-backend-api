@@ -37,6 +37,9 @@ app.use('/api/task/', taskController);
 //=============================================================================
 // START SERVER
 //=============================================================================
-app.listen(app.get('port'), () => {
-	console.log(`✅ PORT: ${app.get('port')} 🌟`);
-});
+if(!module.parent){
+	app.listen(app.get('port'), () => {
+		console.log(`✅ PORT: ${app.get('port')} 🌟`);
+	})
+};
+module.exports = app
