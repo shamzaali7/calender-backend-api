@@ -5,12 +5,16 @@ const express = require('express');
 // instantiate express
 const app = express();
 app.set('port', process.env.PORT || 4000);
+const cors = require('cors');
 
 //=============================================================================
 // Middleware
 //=============================================================================
 // `express.json` parses application/json request data and
 //  adds it to the request object as request.body
+app.use(cors({
+    origin: '*'
+}));
 app.use(express.json());
 // `express.urlencoded` parses x-ww-form-urlencoded request data and
 //  adds it to the request object as request.body
