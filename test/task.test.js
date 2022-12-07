@@ -69,3 +69,14 @@ describe("POST /", () => {
           });
       })
   })
+  describe("DELETE /:id", () => {
+    let len
+    before(done => {
+      application.get('/api/task/638fbd48dbaf8c6bf5a4d729')
+        .set('Accept', 'applications/json')
+        .end((error, response) => {
+            len = response.body.length
+            done()
+        })
+    })
+})
